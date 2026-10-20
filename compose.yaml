@@ -67,6 +67,7 @@ services:
       # - /path/to/root_ca.crt:/usr/local/share/ca-certificates/root_ca.crt
     networks:
       - default
+      - caddy-komodo
 
   ## Deploy Periphery container using this block,
   ## or deploy the Periphery binary with systemd using
@@ -107,3 +108,7 @@ volumes:
   # Core / Periphery
   keys:
 
+networks:
+  caddy-komodo:
+    name: caddy-komodo
+    external: true
